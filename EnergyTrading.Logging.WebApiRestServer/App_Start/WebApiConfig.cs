@@ -16,7 +16,10 @@ namespace EnergyTrading.Logging.WebApiRestServer
                 SupportsCredentials = true
             });
 
-            config.Formatters.JsonFormatter.SerializerSettings.TypeNameHandling = TypeNameHandling.All;
+            config.Formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.All
+            };
 
             // Web API routes
             config.MapHttpAttributeRoutes();
